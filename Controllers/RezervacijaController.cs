@@ -17,7 +17,7 @@ public class RezervacijaController : ControllerBase
     // POST api/<UpdateCoordinatesController>
     [HttpPost]
     [Route("SacuvajRezervaciju")]
-    public void SacuvajRezervaciju([FromBody] JObject data)
+    public IActionResult SacuvajRezervaciju([FromBody] JObject data)
     {
         Rezervacija rezervacija = new Rezervacija();
 
@@ -27,5 +27,6 @@ public class RezervacijaController : ControllerBase
 
         _dbContext.Rezervacije.Add(rezervacija);
         _dbContext.SaveChanges();
+        return Ok("Test");
     }
 }

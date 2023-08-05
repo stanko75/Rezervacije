@@ -37,8 +37,8 @@ $(document).ready(function () {
     // Function to post JSON data to the server's SomePost method
     function postToServer(data) {
         // Replace the URL below with the actual endpoint of your server's SomePost method
-        const url = "https://localhost:7158/api/Rezervacija/SacuvajRezervaciju";
-        //const url = "https://rezervacijejevtic.azurewebsites.net/api/Rezervacija/SacuvajRezervaciju";
+        //const url = "https://localhost:7158/api/Rezervacija/SacuvajRezervaciju";
+        const url = "https://rezervacijejevtic.azurewebsites.net/api/Rezervacija/SacuvajRezervaciju";
 
         // Make a POST request to the server
         $.ajax({

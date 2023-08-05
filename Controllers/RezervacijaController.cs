@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 
 namespace Rezervacije.Controllers;
@@ -28,5 +29,13 @@ public class RezervacijaController : ControllerBase
         _dbContext.Rezervacije.Add(rezervacija);
         _dbContext.SaveChanges();
         return Ok("Test");
+    }
+
+    [HttpGet]
+    [Route("PrikaziRezervacije")]
+    public IActionResult PrikaziRezervacije()
+    {
+        List<Rezervacija> rezervacije = _dbContext.Rezervacije.ToList();
+        return Ok(rezervacije);
     }
 }
